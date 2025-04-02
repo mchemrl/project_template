@@ -17,3 +17,21 @@ def test_input_from_file3():
     expected = 'testing input from file 3'
     actual = input_from_file(test)
     assert actual == expected
+
+def test_input_from_file_pandas1():
+    test = '../../data/test_input_from_file_pandas1.csv'
+    expected = ['name', 'age', 'kevin', '10']
+    actual = input_from_file_pandas(test).to_string().split()
+    assert actual == expected
+
+def test_input_from_file_pandas2():
+    test = '../../data/test_input_from_file_pandas2.csv'
+    expected = ['name', 'age', 'BOOOOB', '7']
+    actual = input_from_file_pandas(test).to_string().split()
+    assert actual == expected
+
+def test_input_from_file_pandas3():
+    test = '../../data/test_input_from_file_pandas3.csv'
+    expected = ['0', '2222', 'idk']
+    actual = input_from_file_pandas(test).to_string().split()
+    assert actual == expected
